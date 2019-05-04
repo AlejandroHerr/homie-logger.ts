@@ -12,7 +12,7 @@ export default async (client: AsyncMqttClient, logger: Logger) => {
     logger.info('Mqtt client connected');
 
     try {
-      await client.subscribe('#');
+      await client.subscribe('homie/#');
     } catch (error) {
       await client.end();
 
