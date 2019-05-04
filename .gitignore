@@ -114,13 +114,11 @@ typings/
 
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+
+dist/*
 
 # End of https://www.gitignore.io/api/node,macos,visualstudiocode
