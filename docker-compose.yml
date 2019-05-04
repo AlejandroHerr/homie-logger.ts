@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mqtt_server:
+    image: eclipse-mosquitto:latest
+    ports:
+      - '1883:1883'
+      - '9001:9001'
+    restart: always
+  mqtt_logger:
+    build: .
+    depends_on:
+      - mqtt_server
+    environment:
+      - MQTT_PORT=1883
+      - MQTT_PROTOCOL=mqtt
+      - MQTT_HOST=mqtt_server
+      - MQTT_CLIENT_NAME=mqtt_logger
+    tty: true
